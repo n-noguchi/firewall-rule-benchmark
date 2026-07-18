@@ -1,0 +1,53 @@
+{
+  "dataset_version": "development-v1",
+  "generator": "data-generator/generate.py",
+  "generated_at": "2026-07-18T00:00:00Z",
+  "profile": {
+    "name": "development",
+    "tenant_count": 24,
+    "large_tenant_count": 2,
+    "large_rule_count": 60,
+    "normal_rule_count": 6,
+    "department_policy_count": 12,
+    "access_count": 720
+  },
+  "max_file_bytes": 50331648,
+  "files": [
+    {
+      "path": "access_logs/access_logs-00000.parquet",
+      "bytes": 6777,
+      "sha256": "4fb1e8c1b2b22af435b85dd009c7e9c65c11c607478d5f7dbd6bea5e75fec6cf",
+      "rows": 720
+    },
+    {
+      "path": "expected_results/expected_results-00000.csv",
+      "bytes": 40612,
+      "sha256": "328d87086b02368bd156fcbc2e5280ff8c6636f8694c5e57a188881c566caa0a",
+      "rows": 720
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00000.csv",
+      "bytes": 39833,
+      "sha256": "862a12acde056c63411d13d2decd063079813d557c6713109bcbd9b4027db58d",
+      "rows": 282
+    },
+    {
+      "path": "policies/policies-00000.csv",
+      "bytes": 3433,
+      "sha256": "0e2998004e4bb9bdf15aaa5206775cf106f2affaa87ed848256a58e3e7a09417",
+      "rows": 36
+    },
+    {
+      "path": "source_ip_group_members/source_ip_group_members-00000.csv",
+      "bytes": 5803,
+      "sha256": "9b8b0d5fbf0550adc6fc034a0adc69c08224cb5e01a5ab10ae3f71543ead7548",
+      "rows": 72
+    },
+    {
+      "path": "source_ip_groups/source_ip_groups-00000.csv",
+      "bytes": 5599,
+      "sha256": "0c2c0e0d38581613689fc1e8e0c3134110c8013e5e11894cfd5401890bf35b93",
+      "rows": 48
+    }
+  ]
+}
