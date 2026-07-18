@@ -15,6 +15,7 @@
 | [data-generator](data-generator/README.md) | 決定的なマスタデータ・アクセスログ生成器。`development` と正式計測向け `release` プロファイルを提供 |
 | [reference-implementation](reference-implementation/README.md) | 正確性を優先した Go の参照実装。バッチ、READY、逐次 API、正解データ検証を提供 |
 | [priority-indexed-implementation](priority-indexed-implementation/README.md) | 条件別の一致候補から最小 priority を選び First Match を再現する Go 実装。事前ロード型バッチ、逐次 API、Docker 構成を提供 |
+| [postgres-indexed-implementation](postgres-indexed-implementation/README.md) | 同じ優先度索引エンジンを踏襲しつつ、マスタDBを独立した PostgreSQL 17 コンテナへ分離した Go 実装。DBプロセス・コンテナ分離要件に適合 |
 
 ## ベンチマーク部門
 
@@ -46,6 +47,8 @@ go run . validate `
 
 | 実装 | データセット | システム構成要素 | 使用言語 | 部門 | 正確性 | 主スコア | 参考スコア |
 | --- | --- | --- | --- | --- | --- | ---: | --- |
+| postgres-indexed | release-v1 | PostgreSQL 17 コンテナ（`postgres:17-alpine`）＋Goアプリコンテナ（pgxpool）＋オンメモリ優先度索引 | Go 1.25.2 | バッチ | 結果一致、DBコンテナ分離要件に適合 | 中央値 150.726 ms / 25,000件 | 165,866件/秒 |
+| postgres-indexed | release-v1 | PostgreSQL 17 コンテナ（`postgres:17-alpine`）＋Goアプリコンテナ（pgxpool）＋オンメモリ優先度索引 | Go 1.25.2 | 逐次 | 結果一致、DBコンテナ分離要件に適合 | 中央値 18.576 s / 25,000件 | p50 551 µs、p99 1.14 ms、1,346件/秒 |
 | priority-indexed | release-v1 | Go単一プロセス＋同一コンテナ内bbolt 1.5.0＋オンメモリ優先度索引 | Go 1.25.12 | バッチ | 結果一致、DBプロセス・コンテナ分離要件に未適合 | 参考値 135.845 ms / 25,000件 | 184,034件/秒、順位対象外 |
 | priority-indexed | release-v1 | Go単一プロセス＋同一コンテナ内bbolt 1.5.0＋オンメモリ優先度索引 | Go 1.25.12 | 逐次 | 結果一致、DBプロセス・コンテナ分離要件に未適合 | 参考値 15.880 s / 25,000件 | 1,574件/秒、順位対象外 |
 

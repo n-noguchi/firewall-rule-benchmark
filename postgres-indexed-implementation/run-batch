@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+
+exec /benchmark/firewall-postgres-indexed batch-client --server http://127.0.0.1:8080 "$@"
