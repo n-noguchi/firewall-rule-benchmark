@@ -1,0 +1,137 @@
+{
+  "dataset_version": "release-v1",
+  "generator": "data-generator/generate.py",
+  "generated_at": "2026-07-18T00:00:00Z",
+  "profile": {
+    "name": "release",
+    "tenant_count": 20000,
+    "large_tenant_count": 20,
+    "large_rule_count": 250000,
+    "normal_rule_count": 6,
+    "department_policy_count": 1000,
+    "access_count": 25000
+  },
+  "max_file_bytes": 50331648,
+  "files": [
+    {
+      "path": "access_logs/access_logs-00000.parquet",
+      "bytes": 167919,
+      "sha256": "5832fddfc8469f5cc362530adcc11c3e3ad765deb8aa0b5d744cc1890fb5108f",
+      "rows": 25000
+    },
+    {
+      "path": "expected_results/expected_results-00000.csv",
+      "bytes": 1475005,
+      "sha256": "ddbd97d70e328e6bb51811d5bd31105cea78032d4b31baab795e7fb370290b36",
+      "rows": 25000
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00000.csv",
+      "bytes": 50331467,
+      "sha256": "cb0c8550a2de824229e0a03d5e0aa9f532a0a5bc5a47bb8ec7aa4f28c3b29f72",
+      "rows": 343199
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00001.csv",
+      "bytes": 50331579,
+      "sha256": "73bb12424dcce2fe282a042a2930b0ef3c38491ec2eca99adc8ef3a9088f2cdf",
+      "rows": 342209
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00002.csv",
+      "bytes": 50331485,
+      "sha256": "11614f349ad0aaab416d988890f3e33c79855eb08693d5ac4797f92aad77d4af",
+      "rows": 342536
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00003.csv",
+      "bytes": 50331600,
+      "sha256": "1cd7a9ebb2bdb605f50f62525e1a1a0f0878f9e698464b3792ee6fdbda4d273a",
+      "rows": 342872
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00004.csv",
+      "bytes": 50331616,
+      "sha256": "2e6b94c971b9c32060c22fae1a29cd15ae635403a1b5cd6cd55a69961294861a",
+      "rows": 342140
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00005.csv",
+      "bytes": 50331502,
+      "sha256": "70dede793e16609b34686f88eeb75119cba6842ba7097b6759be2ea80056b47a",
+      "rows": 342819
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00006.csv",
+      "bytes": 50331518,
+      "sha256": "a63ce7f00337a990310d5e10baffe3758e0b14bfa038a1fd4978072b9d4bcf4c",
+      "rows": 342589
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00007.csv",
+      "bytes": 50331515,
+      "sha256": "40a3e43b557e573992c23f0ba92beb596e4f25a37735e558c1a5d9ef8f2d28de",
+      "rows": 342139
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00008.csv",
+      "bytes": 50331553,
+      "sha256": "0717874a9c9d80135b6f9105ab06e27995fbd6df3656a0367265cc5aa4f33e74",
+      "rows": 343102
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00009.csv",
+      "bytes": 50331497,
+      "sha256": "b6333a29fd21f75b4c09ca255ee65282231c449a62fc3dbc6618ca1dd91eac75",
+      "rows": 342306
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00010.csv",
+      "bytes": 50331589,
+      "sha256": "47745cb33c30923ecf7e8a21b9bdfb873e3ede40f30e7bbd85beb5b458c3710f",
+      "rows": 342439
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00011.csv",
+      "bytes": 50331468,
+      "sha256": "c693b2491d184f2a7050edfbd13b3c4ba0c10e273d7bcddacd3536e0bbd8f19d",
+      "rows": 342969
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00012.csv",
+      "bytes": 50331472,
+      "sha256": "22e39152d289620d581658e4c58a7a499c3b1abaea8cf05830cde0e6ee3a8df5",
+      "rows": 342139
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00013.csv",
+      "bytes": 50331496,
+      "sha256": "3c7674b61026a5c7fb19d21fe462b68df92da80cf0141b0eeb8b7e0ffeec1605",
+      "rows": 342721
+    },
+    {
+      "path": "firewall_rules/firewall_rules-00014.csv",
+      "bytes": 47175562,
+      "sha256": "7dd4d263ce3ebb5e4da098bed4e58b914a428a8d8e787f523df8abddec8dea9d",
+      "rows": 326101
+    },
+    {
+      "path": "policies/policies-00000.csv",
+      "bytes": 1836579,
+      "sha256": "00b032d9aa3ed7117abeef12902e67553bcace4976d90644b19da0fa3af2f702",
+      "rows": 21000
+    },
+    {
+      "path": "source_ip_group_members/source_ip_group_members-00000.csv",
+      "bytes": 3385807,
+      "sha256": "ec956d5c394be917df791d1c72d324e14bc648550f588402a860102de2ce5240",
+      "rows": 42000
+    },
+    {
+      "path": "source_ip_groups/source_ip_groups-00000.csv",
+      "bytes": 2421750,
+      "sha256": "f1b566c98b7460ad4b517b24d6446b9b591e75bfd51d3e4cdac5740a78ccf00b",
+      "rows": 22000
+    }
+  ]
+}

@@ -3,3 +3,6 @@
 *.go text eol=lf
 *.json text eol=lf
 *.py text eol=lf
+*.yaml text eol=lf
+Dockerfile text eol=lf
+run-batch text eol=lf

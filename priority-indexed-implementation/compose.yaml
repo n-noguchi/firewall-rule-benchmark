@@ -1,0 +1,20 @@
+services:
+  target:
+    build:
+      context: ..
+      dockerfile: priority-indexed-implementation/Dockerfile
+    image: firewall-priority-indexed:local
+    cpus: "8.0"
+    mem_limit: 16g
+    ports:
+      - "127.0.0.1:${BENCHMARK_HOST_PORT:-8080}:8080"
+    volumes:
+      - ${BENCHMARK_DATASET_PATH:-../benchmark-data/development-v1}/manifest.json:/benchmark/data/manifest.json:ro
+      - ${BENCHMARK_DATASET_PATH:-../benchmark-data/development-v1}/policies:/benchmark/data/policies:ro
+      - ${BENCHMARK_DATASET_PATH:-../benchmark-data/development-v1}/firewall_rules:/benchmark/data/firewall_rules:ro
+      - ${BENCHMARK_DATASET_PATH:-../benchmark-data/development-v1}/source_ip_groups:/benchmark/data/source_ip_groups:ro
+      - ${BENCHMARK_DATASET_PATH:-../benchmark-data/development-v1}/source_ip_group_members:/benchmark/data/source_ip_group_members:ro
+      - ${BENCHMARK_DATASET_PATH:-../benchmark-data/development-v1}/access_logs:/benchmark/input/access_logs:ro
+      - ./output:/benchmark/output
+      - ./state:/benchmark/state
+    restart: "no"

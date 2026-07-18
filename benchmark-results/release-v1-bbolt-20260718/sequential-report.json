@@ -1,0 +1,92 @@
+{
+  "mode": "sequential",
+  "started_at": "2026-07-18T23:15:19.4423014+09:00",
+  "completed_at": "2026-07-18T23:18:54.7446386+09:00",
+  "warmup_runs": 3,
+  "measured_runs": 10,
+  "access_count": 25000,
+  "validation_performed": true,
+  "all_correct": true,
+  "sequential": [
+    {
+      "run": 1,
+      "total_ns": 15789798800,
+      "p50_ns": 529300,
+      "p99_ns": 1077300,
+      "maximum_ns": 3188500,
+      "correct": true
+    },
+    {
+      "run": 2,
+      "total_ns": 16040715600,
+      "p50_ns": 529100,
+      "p99_ns": 1086400,
+      "maximum_ns": 2819000,
+      "correct": true
+    },
+    {
+      "run": 3,
+      "total_ns": 15841568500,
+      "p50_ns": 529100,
+      "p99_ns": 1074100,
+      "maximum_ns": 2283600,
+      "correct": true
+    },
+    {
+      "run": 4,
+      "total_ns": 15827485900,
+      "p50_ns": 529700,
+      "p99_ns": 1082000,
+      "maximum_ns": 13699700,
+      "correct": true
+    },
+    {
+      "run": 5,
+      "total_ns": 15870744900,
+      "p50_ns": 529000,
+      "p99_ns": 1080700,
+      "maximum_ns": 4181800,
+      "correct": true
+    },
+    {
+      "run": 6,
+      "total_ns": 15965161200,
+      "p50_ns": 528800,
+      "p99_ns": 1077500,
+      "maximum_ns": 2474100,
+      "correct": true
+    },
+    {
+      "run": 7,
+      "total_ns": 15887606900,
+      "p50_ns": 529700,
+      "p99_ns": 1077600,
+      "maximum_ns": 8862500,
+      "correct": true
+    },
+    {
+      "run": 8,
+      "total_ns": 16198039300,
+      "p50_ns": 530800,
+      "p99_ns": 1088800,
+      "maximum_ns": 4161900,
+      "correct": true
+    },
+    {
+      "run": 9,
+      "total_ns": 15921972900,
+      "p50_ns": 529500,
+      "p99_ns": 1079100,
+      "maximum_ns": 2098100,
+      "correct": true
+    },
+    {
+      "run": 10,
+      "total_ns": 15873073100,
+      "p50_ns": 529000,
+      "p99_ns": 1078000,
+      "maximum_ns": 2815800,
+      "correct": true
+    }
+  ]
+}

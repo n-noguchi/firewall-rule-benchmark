@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"os"
 	"regexp"
+	"regexp/syntax"
 	"sort"
 	"strconv"
 	"strings"
@@ -82,11 +83,6 @@ func LoadEngine(dataDir string) (*Engine, error) {
 		if err != nil {
 			return fmt.Errorf("rule %q: %w", row["rule_id"], err)
 		}
-		for _, existing := range policy.Rules {
-			if existing.ID == rule.ID || existing.Priority == rule.Priority {
-				return fmt.Errorf("duplicate rule id or priority in policy %q", policy.ID)
-			}
-		}
 		policy.Rules = append(policy.Rules, rule)
 		return nil
 	}); err != nil {
@@ -133,6 +129,11 @@ func LoadEngine(dataDir string) (*Engine, error) {
 	}
 	for _, policy := range policiesByID {
 		sort.Slice(policy.Rules, func(i, j int) bool { return policy.Rules[i].Priority < policy.Rules[j].Priority })
+		for index := 1; index < len(policy.Rules); index++ {
+			if policy.Rules[index-1].Priority == policy.Rules[index].Priority {
+				return nil, fmt.Errorf("duplicate rule priority %d in policy %q", policy.Rules[index].Priority, policy.ID)
+			}
+		}
 	}
 	return engine, nil
 }
@@ -149,11 +150,11 @@ func newRule(row map[string]string, priority int) (*Rule, error) {
 		if rule.Pattern == "" {
 			return nil, errorsNew("regex_pattern is required")
 		}
-		compiled, err := regexp.Compile(rule.Pattern)
+		_, err := syntax.Parse(rule.Pattern, syntax.Perl)
 		if err != nil {
 			return nil, fmt.Errorf("invalid RE2 pattern: %w", err)
 		}
-		rule.Regex = compiled
+		rule.Regex = lazyRegexp(rule.Pattern)
 	case "SOURCE_IPV4_GROUP":
 		if rule.GroupKey == "" {
 			return nil, errorsNew("source_ip_group_key is required")
@@ -175,6 +176,13 @@ func newRule(row map[string]string, priority int) (*Rule, error) {
 		return nil, fmt.Errorf("unknown rule_type %q", rule.Type)
 	}
 	return rule, nil
+}
+
+type lazyRegexp string
+
+func (pattern lazyRegexp) MatchString(input string) bool {
+	matched, _ := regexp.MatchString(string(pattern), input)
+	return matched
 }
 
 func errorsNew(text string) error { return fmt.Errorf("%s", text) }

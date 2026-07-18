@@ -1,0 +1,192 @@
+{
+  "mode": "batch",
+  "started_at": "2026-07-18T14:14:10.408818611Z",
+  "completed_at": "2026-07-18T14:14:26.849387759Z",
+  "warmup_runs": 5,
+  "measured_runs": 30,
+  "access_count": 25000,
+  "validation_performed": false,
+  "all_correct": false,
+  "batch": [
+    {
+      "run": 1,
+      "elapsed_ns": 120064377,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 2,
+      "elapsed_ns": 129116689,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 3,
+      "elapsed_ns": 123611790,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 4,
+      "elapsed_ns": 135550560,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 5,
+      "elapsed_ns": 151860932,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 6,
+      "elapsed_ns": 142551222,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 7,
+      "elapsed_ns": 153623018,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 8,
+      "elapsed_ns": 148160384,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 9,
+      "elapsed_ns": 143589446,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 10,
+      "elapsed_ns": 209475954,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 11,
+      "elapsed_ns": 134312745,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 12,
+      "elapsed_ns": 164868477,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 13,
+      "elapsed_ns": 132045633,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 14,
+      "elapsed_ns": 148652788,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 15,
+      "elapsed_ns": 131707806,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 16,
+      "elapsed_ns": 152668036,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 17,
+      "elapsed_ns": 129869395,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 18,
+      "elapsed_ns": 139152245,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 19,
+      "elapsed_ns": 140216727,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 20,
+      "elapsed_ns": 144562015,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 21,
+      "elapsed_ns": 143226883,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 22,
+      "elapsed_ns": 179179996,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 23,
+      "elapsed_ns": 136138753,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 24,
+      "elapsed_ns": 135136262,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 25,
+      "elapsed_ns": 119497785,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 26,
+      "elapsed_ns": 132014867,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 27,
+      "elapsed_ns": 123850165,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 28,
+      "elapsed_ns": 124288763,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 29,
+      "elapsed_ns": 130171649,
+      "validated": false,
+      "correct": false
+    },
+    {
+      "run": 30,
+      "elapsed_ns": 119166518,
+      "validated": false,
+      "correct": false
+    }
+  ]
+}

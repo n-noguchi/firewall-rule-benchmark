@@ -1,0 +1,162 @@
+{
+  "mode": "batch",
+  "started_at": "2026-07-18T12:42:10.037887771Z",
+  "completed_at": "2026-07-18T12:42:19.947979474Z",
+  "warmup_runs": 5,
+  "measured_runs": 30,
+  "access_count": 720,
+  "all_correct": true,
+  "batch": [
+    {
+      "run": 1,
+      "elapsed_ns": 22188141,
+      "correct": true
+    },
+    {
+      "run": 2,
+      "elapsed_ns": 23473550,
+      "correct": true
+    },
+    {
+      "run": 3,
+      "elapsed_ns": 25738065,
+      "correct": true
+    },
+    {
+      "run": 4,
+      "elapsed_ns": 22858975,
+      "correct": true
+    },
+    {
+      "run": 5,
+      "elapsed_ns": 25261385,
+      "correct": true
+    },
+    {
+      "run": 6,
+      "elapsed_ns": 37948148,
+      "correct": true
+    },
+    {
+      "run": 7,
+      "elapsed_ns": 22214662,
+      "correct": true
+    },
+    {
+      "run": 8,
+      "elapsed_ns": 23859588,
+      "correct": true
+    },
+    {
+      "run": 9,
+      "elapsed_ns": 24021074,
+      "correct": true
+    },
+    {
+      "run": 10,
+      "elapsed_ns": 21426394,
+      "correct": true
+    },
+    {
+      "run": 11,
+      "elapsed_ns": 26991897,
+      "correct": true
+    },
+    {
+      "run": 12,
+      "elapsed_ns": 25757864,
+      "correct": true
+    },
+    {
+      "run": 13,
+      "elapsed_ns": 27334856,
+      "correct": true
+    },
+    {
+      "run": 14,
+      "elapsed_ns": 27925220,
+      "correct": true
+    },
+    {
+      "run": 15,
+      "elapsed_ns": 26553111,
+      "correct": true
+    },
+    {
+      "run": 16,
+      "elapsed_ns": 23922691,
+      "correct": true
+    },
+    {
+      "run": 17,
+      "elapsed_ns": 24148411,
+      "correct": true
+    },
+    {
+      "run": 18,
+      "elapsed_ns": 25638311,
+      "correct": true
+    },
+    {
+      "run": 19,
+      "elapsed_ns": 21733263,
+      "correct": true
+    },
+    {
+      "run": 20,
+      "elapsed_ns": 27683040,
+      "correct": true
+    },
+    {
+      "run": 21,
+      "elapsed_ns": 24243698,
+      "correct": true
+    },
+    {
+      "run": 22,
+      "elapsed_ns": 23249222,
+      "correct": true
+    },
+    {
+      "run": 23,
+      "elapsed_ns": 23176330,
+      "correct": true
+    },
+    {
+      "run": 24,
+      "elapsed_ns": 20839386,
+      "correct": true
+    },
+    {
+      "run": 25,
+      "elapsed_ns": 21861011,
+      "correct": true
+    },
+    {
+      "run": 26,
+      "elapsed_ns": 23665521,
+      "correct": true
+    },
+    {
+      "run": 27,
+      "elapsed_ns": 22116460,
+      "correct": true
+    },
+    {
+      "run": 28,
+      "elapsed_ns": 26023594,
+      "correct": true
+    },
+    {
+      "run": 29,
+      "elapsed_ns": 24427176,
+      "correct": true
+    },
+    {
+      "run": 30,
+      "elapsed_ns": 52066813,
+      "correct": true
+    }
+  ]
+}
+

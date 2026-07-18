@@ -2,3 +2,7 @@ __pycache__/
 *.py[cod]
 *.test
 reference-implementation/results.csv
+priority-indexed-implementation/output/*
+!priority-indexed-implementation/output/.gitkeep
+priority-indexed-implementation/state/*
+!priority-indexed-implementation/state/.gitkeep
