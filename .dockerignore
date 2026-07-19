@@ -3,3 +3,7 @@ benchmark-data
 data-generator
 reference-implementation
 priority-indexed-implementation/output
+**/target
+**/.m2
+**/state
+**/output

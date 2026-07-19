@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+
+# Bridges /benchmark/run-batch to the Spark serve HTTP endpoint. Matches the
+# contract documented in BENCHMARK_RULES.md section 22.
+exec java -cp "$SPARK_HOME/jars/*" firewall.spark.App batch-client \
+    --server http://127.0.0.1:8080 "$@"

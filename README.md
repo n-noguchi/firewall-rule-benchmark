@@ -18,6 +18,7 @@
 | [postgres-indexed-implementation](postgres-indexed-implementation/README.md) | 同じ優先度索引エンジンを踏襲しつつ、マスタDBを独立した PostgreSQL 17 コンテナへ分離した Go 実装。DBプロセス・コンテナ分離要件に適合 |
 | [postgres-indexed-java-implementation](postgres-indexed-java-implementation/README.md) | 同じ優先度索引エンジンを Java 21 で再実装し、PostgreSQL 17 コンテナへ分離。JIT が効いたバッチ評価が強み |
 | [postgres-indexed-java8-implementation](postgres-indexed-java8-implementation/README.md) | 同じエンジンを Java 8 (Temurin 1.8.0) で実装。Java 8 互換のため record や switch 式、HttpClient を避けた参考実装 |
+| [spark-gluten-implementation](spark-gluten-implementation/README.md) | 同じ評価ロジックを単一の Spark SQL プランで表現し、Apache Spark 3.5.5 で実行。Apache Gluten 1.5.0 (Velox) も組み込み済み（ネイティブ lib 調整で有効化可能） |
 
 ## ベンチマーク部門
 
@@ -49,6 +50,7 @@ go run . validate `
 
 | 実装 | データセット | システム構成要素 | 使用言語 | 部門 | 正確性 | 主スコア | 参考スコア |
 | --- | --- | --- | --- | --- | --- | ---: | --- |
+| spark-gluten | release-v1 | PostgreSQL 17 コンテナ（`postgres:17-alpine`）＋Spark 3.5.5 アプリコンテナ（JDK 17 + Spark SQL + Gluten 1.5.0/Velox 組み込み・vanilla Spark 構成で計測） | Java 17 / Scala 2.12 / Spark 3.5.5 | バッチ | 結果一致、DBコンテナ分離要件に適合 | 中央値 5,018 ms / 25,000件 | 4,982件/秒 |
 | postgres-indexed-java8 | release-v1 | PostgreSQL 17 コンテナ（`postgres:17-alpine`）＋Java 8 アプリコンテナ（HikariCP 4.0.3＋JDK標準HttpServer＋HttpURLConnection＋オンメモリ優先度索引） | Java 8 (Temurin 1.8.0_492) | バッチ | 結果一致、DBコンテナ分離要件に適合 | 中央値 126.969 ms / 25,000件 | 196,900件/秒 |
 | postgres-indexed-java8 | release-v1 | PostgreSQL 17 コンテナ（`postgres:17-alpine`）＋Java 8 アプリコンテナ（HikariCP 4.0.3＋JDK標準HttpServer＋HttpURLConnection＋オンメモリ優先度索引） | Java 8 (Temurin 1.8.0_492) | 逐次 | 結果一致、DBコンテナ分離要件に適合 | 1113.888 s / 25,000件 | p50 43.98 ms、p99 48.07 ms、22件/秒（JDK標準HTTPサーバでKeep-Aliveが効かず、参考値） |
 | postgres-indexed-java | release-v1 | PostgreSQL 17 コンテナ（`postgres:17-alpine`）＋Java 21 アプリコンテナ（HikariCP＋JDK標準HttpServer＋オンメモリ優先度索引） | Java 21 (OpenJDK 21.0.9) | バッチ | 結果一致、DBコンテナ分離要件に適合 | 中央値 105.797 ms / 25,000件 | 236,300件/秒 |
