@@ -1,0 +1,48 @@
+name: firewall-postgres-indexed-java
+
+services:
+  db:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: firewall
+      POSTGRES_PASSWORD: firewall
+      POSTGRES_DB: firewall
+      POSTGRES_INITDB_ARGS: "--encoding=UTF8 --locale=C"
+    ports:
+      # Host port is only used for running tests against the live DB.
+      # Production benchmark traffic stays on the compose network.
+      - "127.0.0.1:${BENCHMARK_DB_HOST_PORT:-5434}:5432"
+    volumes:
+      - ./state/pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U firewall -d firewall"]
+      interval: 2s
+      timeout: 2s
+      retries: 60
+    restart: "no"
+
+  target:
+    build:
+      context: ..
+      dockerfile: postgres-indexed-java-implementation/Dockerfile
+    image: firewall-postgres-java:local
+    cpus: "8.0"
+    mem_limit: 16g
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      MASTER_DATABASE_URL: "jdbc:postgresql://db:5432/firewall?user=firewall&password=firewall&sslmode=disable"
+      JAVA_TOOL_OPTIONS: "-XX:+UseParallelGC -Xms2g -Xmx12g"
+    ports:
+      - "127.0.0.1:${BENCHMARK_HOST_PORT:-8082}:8080"
+    volumes:
+      - ${BENCHMARK_DATASET_PATH:-../benchmark-data/development-v1}/manifest.json:/benchmark/data/manifest.json:ro
+      - ${BENCHMARK_DATASET_PATH:-../benchmark-data/development-v1}/policies:/benchmark/data/policies:ro
+      - ${BENCHMARK_DATASET_PATH:-../benchmark-data/development-v1}/firewall_rules:/benchmark/data/firewall_rules:ro
+      - ${BENCHMARK_DATASET_PATH:-../benchmark-data/development-v1}/source_ip_groups:/benchmark/data/source_ip_groups:ro
+      - ${BENCHMARK_DATASET_PATH:-../benchmark-data/development-v1}/source_ip_group_members:/benchmark/data/source_ip_group_members:ro
+      - ${BENCHMARK_DATASET_PATH:-../benchmark-data/development-v1}/access_logs:/benchmark/input/access_logs:ro
+      - ${BENCHMARK_DATASET_PATH:-../benchmark-data/development-v1}/expected_results:/benchmark/expected_results:ro
+      - ./output:/benchmark/output
+    restart: "no"

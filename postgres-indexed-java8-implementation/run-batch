@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+
+exec java -jar /benchmark/firewall-postgres-java8.jar batch-client --server http://127.0.0.1:8080 "$@"
